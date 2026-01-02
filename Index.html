@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 金角獎報名表單</title>
+    <style>
+        :root {
+            --bg-color: #7B0000; /* 深紅底色 */
+            --gold-color: #D4AF37; /* 金色文字/邊框 */
+            --input-bg: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--gold-color);
+            font-family: "Microsoft JhengHei", "PingFang TC", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-card {
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid var(--gold-color);
+            padding: 40px;
+            border-radius: 15px;
+            background: rgba(123, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        .sub-logo {
+            font-size: 14px;
+            letter-spacing: 2px;
+            border-top: 1px solid var(--gold-color);
+            display: inline-block;
+            padding-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        input[type="text"], input[type="url"], select {
+            width: 100%;
+            padding: 12px;
+            background: var(--input-bg);
+            border: 1px solid var(--gold-color);
+            color: #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .checkbox-container {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px;
+            max-height: 150px;
+            overflow-y: auto;
+            border-radius: 5px;
+        }
+
+        .checkbox-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--gold-color);
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--gold-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #fff;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <div class="header">
+        <div class="logo-text">金角獎</div>
+        <div class="sub-logo">GOLDEN HORN AWARDS 2026</div>
+    </div>
+
+    <form id="applyForm">
+        <div class="form-group">
+            <label>帳號名稱</label>
+            <input type="text" id="name" placeholder="請輸入帳號名稱" required>
+        </div>
+
+        <div class="form-group">
+            <label>帳號連結 (URL)</label>
+            <input type="url" id="url" placeholder="https://..." required>
+        </div>
+
+        <div class="form-group">
+            <label>帳號類型歸屬</label>
+            <select id="type" required>
+                <option value="">請選擇類型</option>
+                <option value="年度大獎">年度大獎</option>
+                <option value="社群互動">社群與互動類</option>
+                <option value="二次元">二次元角色類</option>
+                <option value="三次元">三次元角色類</option>
+                <option value="特別系列">特別系列類</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>獎項報名勾選</label>
+            <div class="checkbox-container">
+                <div class="checkbox-item"><input type="checkbox" name="award" value="年度金角獎"> 年度金角獎</div>
+                <div class="checkbox-item"><input type="checkbox" name="award" value="最佳互動獎"> 最佳互動獎</div>
+                <div class="checkbox-item"><input type="checkbox" name="award" value="最佳人氣獎"> 最佳人氣獎</div>
+                <div class="checkbox-item"><input type="checkbox" name="award" value="最佳跨系列獎"> 最佳跨系列獎</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label style="font-size: 12px; opacity: 0.8;">
+                <input type="checkbox" required> 我已閱讀並同意金角獎評選規定
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">立即報名</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('applyForm').onsubmit = function(e) {
+        e.preventDefault();
+        alert('報名資料已送出！(後台串接準備中)');
+    };
+</script>
+
+</body>
+</html>
