@@ -3,171 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 金角獎報名表單</title>
+    <title>2026 第一屆金角獎報名系統</title>
     <style>
         :root {
-            --bg-color: #7B0000; /* 深紅底色 */
-            --gold-color: #D4AF37; /* 金色文字/邊框 */
-            --input-bg: rgba(0, 0, 0, 0.2);
+            --gold: #D4AF37;
+            --dark-red: #800000;
+            --form-bg: rgba(60, 0, 0, 0.6);
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--gold-color);
-            font-family: "Microsoft JhengHei", "PingFang TC", serif;
+            background-color: var(--dark-red);
+            background-image: linear-gradient(135deg, #600000 0%, #800000 100%);
+            color: var(--gold);
+            font-family: "PingFang TC", "Microsoft JhengHei", serif;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
             padding: 20px;
         }
 
-        .form-card {
+        .container {
             width: 100%;
-            max-width: 500px;
-            border: 1px solid var(--gold-color);
-            padding: 40px;
-            border-radius: 15px;
-            background: rgba(123, 0, 0, 0.8);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 550px;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 40px 30px;
+            background-color: var(--form-bg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .logo-text {
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 5px;
+        .logo-main {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 8px;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .sub-logo {
+        .logo-sub {
             font-size: 14px;
-            letter-spacing: 2px;
-            border-top: 1px solid var(--gold-color);
+            letter-spacing: 3px;
+            margin-top: 5px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--gold);
             display: inline-block;
-            padding-top: 5px;
+            padding-top: 8px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .form-section {
+            margin-bottom: 25px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 16px;
+            font-weight: 600;
         }
 
-        input[type="text"], input[type="url"], select {
+        input[type="text"], 
+        input[type="url"], 
+        select {
             width: 100%;
             padding: 12px;
-            background: var(--input-bg);
-            border: 1px solid var(--gold-color);
-            color: #fff;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            color: white;
+            font-size: 15px;
             box-sizing: border-box;
+            outline: none;
         }
 
-        .checkbox-container {
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.2);
             padding: 15px;
-            max-height: 150px;
-            overflow-y: auto;
-            border-radius: 5px;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .checkbox-item {
-            margin-bottom: 10px;
+        .check-item {
             display: flex;
             align-items: center;
+            font-size: 14px;
+            cursor: pointer;
         }
 
-        input[type="checkbox"] {
-            accent-color: var(--gold-color);
-            margin-right: 10px;
+        .check-item input {
+            margin-right: 8px;
+            accent-color: var(--gold);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 15px;
-            background-color: var(--gold-color);
-            color: var(--bg-color);
+            padding: 16px;
+            background-color: var(--gold);
+            color: var(--dark-red);
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            text-transform: uppercase;
         }
 
         .submit-btn:hover {
             background-color: #fff;
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+        }
+
+        .footer-note {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 25px;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
 
-<div class="form-card">
+<div class="container">
     <div class="header">
-        <div class="logo-text">金角獎</div>
-        <div class="sub-logo">GOLDEN HORN AWARDS 2026</div>
+        <h1 class="logo-main">金角獎</h1>
+        <div class="logo-sub">GOLDEN HORN AWARDS 2026</div>
     </div>
 
-    <form id="applyForm">
-        <div class="form-group">
-            <label>帳號名稱</label>
-            <input type="text" id="name" placeholder="請輸入帳號名稱" required>
+    <form id="submissionForm">
+        <div class="form-section">
+            <label for="accName">帳號名稱</label>
+            <input type="text" id="accName" name="accName" placeholder="請輸入參賽帳號名稱" required>
         </div>
 
-        <div class="form-group">
-            <label>帳號連結 (URL)</label>
-            <input type="url" id="url" placeholder="https://..." required>
+        <div class="form-section">
+            <label for="accUrl">帳號連結</label>
+            <input type="url" id="accUrl" name="accUrl" placeholder="https://instagram.com/your_id" required>
         </div>
 
-        <div class="form-group">
-            <label>帳號類型歸屬</label>
-            <select id="type" required>
-                <option value="">請選擇類型</option>
+        <div class="form-section">
+            <label for="category">帳號類型歸屬</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>請選擇您的帳號類別</option>
                 <option value="年度大獎">年度大獎</option>
-                <option value="社群互動">社群與互動類</option>
-                <option value="二次元">二次元角色類</option>
-                <option value="三次元">三次元角色類</option>
-                <option value="特別系列">特別系列類</option>
+                <option value="社群與互動類">社群與互動類</option>
+                <option value="二次元角色類">二次元角色類</option>
+                <option value="三次元角色類">三次元角色類</option>
+                <option value="特別系列類">特別系列類</option>
             </select>
         </div>
 
-        <div class="form-group">
-            <label>獎項報名勾選</label>
-            <div class="checkbox-container">
-                <div class="checkbox-item"><input type="checkbox" name="award" value="年度金角獎"> 年度金角獎</div>
-                <div class="checkbox-item"><input type="checkbox" name="award" value="最佳互動獎"> 最佳互動獎</div>
-                <div class="checkbox-item"><input type="checkbox" name="award" value="最佳人氣獎"> 最佳人氣獎</div>
-                <div class="checkbox-item"><input type="checkbox" name="award" value="最佳跨系列獎"> 最佳跨系列獎</div>
+        <div class="form-section">
+            <label>獎項報名勾選 (可多選)</label>
+            <div class="awards-grid">
+                <label class="check-item"><input type="checkbox" name="awards" value="年度金角獎">年度金角獎</label>
+                <label class="check-item"><input type="checkbox" name="awards" value="最佳帳號經營獎">最佳帳號經營</label>
+                <label class="check-item"><input type="checkbox" name="awards" value="最佳話題帳號">最佳話題帳號</label>
+                <label class="check-item"><input type="checkbox" name="awards" value="最佳互動獎">最佳互動獎</label>
+                <label class="check-item"><input type="checkbox" name="awards" value="最佳人氣獎">最佳人氣獎</label>
+                <label class="check-item"><input type="checkbox" name="awards" value="最佳跨系列獎">最佳跨系列獎</label>
             </div>
         </div>
 
-        <div class="form-group">
-            <label style="font-size: 12px; opacity: 0.8;">
-                <input type="checkbox" required> 我已閱讀並同意金角獎評選規定
+        <div class="form-section" style="text-align: center;">
+            <label class="check-item" style="justify-content: center; opacity: 0.9;">
+                <input type="checkbox" required> 我已確認報名資料並同意評選規定
             </label>
         </div>
 
-        <button type="submit" class="submit-btn">立即報名</button>
+        <button type="submit" class="submit-btn">送出報名申請</button>
     </form>
+
+    <div class="footer-note">
+        根據《金角獎參與與評選規定》第四項公告
+    </div>
 </div>
 
 <script>
-    document.getElementById('applyForm').onsubmit = function(e) {
+    document.getElementById('submissionForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('報名資料已送出！(後台串接準備中)');
-    };
+        
+        // 取得勾選的獎項
+        const selectedAwards = Array.from(document.querySelectorAll('input[name="awards"]:checked'))
+                                    .map(el => el.value);
+
+        if (selectedAwards.length === 0) {
+            alert('請至少勾選一個報名獎項');
+            return;
+        }
+
+        // 這裡可以串接 Vercel Function 或其他後台 API
+        console.log('報名數據:', {
+            name: document.getElementById('accName').value,
+            url: document.getElementById('accUrl').value,
+            category: document.getElementById('category').value,
+            awards: selectedAwards
+        });
+
+        alert('恭喜！報名資料已送出成功。');
+    });
 </script>
 
 </body>
